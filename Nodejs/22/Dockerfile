@@ -19,7 +19,7 @@ RUN         npm cache clear --force
 RUN         npm install npm@10.x.x typescript ts-node @types/node --force --verbose --location=global
 
 # install pnpm
-RUN         npm install -g corepack
+RUN         npm install -g corepack@latest
 RUN         corepack enable
 RUN         corepack prepare pnpm@latest --activate
 

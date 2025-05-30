@@ -14,7 +14,7 @@ RUN         apt update \
 RUN         npm install npm@9.8.1 typescript ts-node @types/node --location=global
 
 # install pnpm
-RUN         npm install -g corepack
+RUN         npm install -g corepack@latest
 RUN         corepack enable
 RUN         corepack prepare pnpm@latest --activate
 
