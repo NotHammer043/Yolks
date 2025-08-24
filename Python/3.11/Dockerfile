@@ -6,12 +6,16 @@ LABEL       author="Michael Parker" maintainer="support@cybrancee.com"
 LABEL       org.opencontainers.image.source="https://github.com/Cybrancee/Yolks"
 LABEL       org.opencontainers.image.licenses=MIT
 
-RUN apt update -y \
-    && apt -y upgrade \
-    && apt-get -y install sudo \
-    && apt -y install wget curl git gcc g++ ca-certificates dnsutils curl iproute2 ffmpeg procps tini libmariadb3 libmariadb-dev libnss3 libnss3-dev libnss3-tools libgdk-pixbuf2.0-dev libgtk-3-dev libxss-dev xvfb \
-    && rm -rf /var/lib/apt/lists/* \
-    && useradd -m -d /home/container container 
+RUN set -eux; \
+    apt-get update; \
+    apt-get -y upgrade; \
+    apt-get install -y --no-install-recommends \
+      sudo wget curl git gcc g++ ca-certificates dnsutils iproute2 ffmpeg procps tini \
+      libmariadb3 libmariadb-dev libnss3 libnss3-dev libnss3-tools \
+      libgdk-pixbuf2.0-dev libgtk-3-dev libxss-dev xvfb x11-utils x11-xkb-utils \
+    ; \
+    rm -rf /var/lib/apt/lists/*; \
+    useradd -m -d /home/container container
 
 RUN apt update -y \
     && sudo apt install -y libnss3 \
