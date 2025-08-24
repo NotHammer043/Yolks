@@ -9,7 +9,7 @@ LABEL       org.opencontainers.image.licenses=MIT
 RUN apt update -y \
     && apt -y upgrade \
     && apt-get -y install sudo \
-    && apt -y install wget curl git gcc g++ ca-certificates dnsutils curl iproute2 ffmpeg procps tini libmariadb3 libmariadb-dev libnss3 libnss3-dev libnss3-tools libgdk-pixbuf2.0-dev libgtk-3-dev libxss-dev \
+    && apt -y install wget curl git gcc g++ ca-certificates dnsutils curl iproute2 ffmpeg procps tini libmariadb3 libmariadb-dev libnss3 libnss3-dev libnss3-tools libgdk-pixbuf2.0-dev libgtk-3-dev libxss-dev xvfb \
     && rm -rf /var/lib/apt/lists/* \
     && useradd -m -d /home/container container 
 
