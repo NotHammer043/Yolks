@@ -52,5 +52,5 @@ jobs:
           context: ./Python/
           file: ./Python/${{ matrix.version }}/Dockerfile
           push: true
-          tags: ghcr.io/cybrancee/python:${{ matrix.version }}
+          tags: ghcr.io/nothammer043/python:${{ matrix.version }}
           
