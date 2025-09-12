@@ -13,12 +13,14 @@ RUN set -eux; \
       sudo wget curl git gcc g++ ca-certificates dnsutils iproute2 ffmpeg procps tini \
       libmariadb3 libmariadb-dev libnss3 libnss3-dev libnss3-tools \
       libgdk-pixbuf2.0-dev libgtk-3-dev libxss-dev xvfb x11-utils x11-xkb-utils \
+      tzdata \
     ; \
     rm -rf /var/lib/apt/lists/*; \
-    useradd -m -d /home/container container
+    useradd -m -d /home/container container; \
+    useradd -m -d /home/pteronano pteronano
 
 RUN apt update -y \
-    && sudo apt install -y libnss3 \
+    && apt install -y libnss3 \
     && apt search libnss3
 
 RUN python -m pip install --upgrade pip
@@ -35,5 +37,5 @@ STOPSIGNAL SIGINT
 
 COPY        --chown=container:container ./../entrypoint.sh /entrypoint.sh
 RUN         chmod +x /entrypoint.sh
-ENTRYPOINT    ["/usr/bin/tini", "-g", "--"]
+ENTRYPOINT  ["/usr/bin/tini", "-g", "--"]
 CMD         ["/entrypoint.sh"]
