@@ -29,7 +29,7 @@ RUN wget --no-verbose -O /tmp/chrome.deb https://dl.google.com/linux/chrome/deb/
     && apt install -y /tmp/chrome.deb \
     && rm /tmp/chrome.deb
 
-RUN apt-get update && apt-get install -y xvnc4viewer x11vnc && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y tigervnc-standalone-server tigervnc-viewer x11vnc && rm -rf /var/lib/apt/lists/*
 
 USER        container
 ENV         USER=container HOME=/home/container
