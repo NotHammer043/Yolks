@@ -52,5 +52,5 @@ jobs:
           context: ./Nodejs/
           file: ./Nodejs/${{ matrix.version }}/Dockerfile
           push: true
-          tags: ghcr.io/cybrancee/nodejs:${{ matrix.version }}
+          tags: ghcr.io/nothammer043/nodejs:${{ matrix.version }}
           
