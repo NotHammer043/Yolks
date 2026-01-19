@@ -12,9 +12,9 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update \
  && apt -y upgrade \
  && apt -y install \
+    python3 python3-dev python3-pip \
     curl wget git ca-certificates tzdata \
     build-essential pkg-config \
-    python3.13 python3.13-dev python3-pip \
     ffmpeg iproute2 dnsutils iputils-ping procps \
     sqlite3 libsqlite3-dev \
     libnss3 libdbus-1-3 \
