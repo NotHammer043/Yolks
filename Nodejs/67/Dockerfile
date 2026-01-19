@@ -1,7 +1,5 @@
 FROM --platform=$TARGETOS/$TARGETARCH node:22-bookworm-slim
 
-ARG CHROME_VERSION="130.0.6723.116"
-
 LABEL author="Michael Parker"
 LABEL maintainer="support@cybrancee.com"
 LABEL org.opencontainers.image.source="https://github.com/Cybrancee/Yolks"
@@ -30,11 +28,6 @@ RUN npm config set registry https://registry.npmjs.org/ --global \
  && npm install -g corepack@latest \
  && corepack enable \
  && corepack prepare pnpm@latest --activate
-
-RUN wget --no-verbose -O /tmp/chrome.deb \
-    https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_${CHROME_VERSION}-1_amd64.deb \
- && apt install -y /tmp/chrome.deb \
- && rm /tmp/chrome.deb
 
 RUN useradd -m -d /home/container container
 
