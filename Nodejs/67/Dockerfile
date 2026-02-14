@@ -13,6 +13,7 @@ RUN apt update \
     python3 python3-dev python3-pip \
     curl wget git ca-certificates tzdata \
     build-essential pkg-config \
+    cmake \
     ffmpeg iproute2 dnsutils iputils-ping procps \
     sqlite3 libsqlite3-dev \
     libnss3 libdbus-1-3 \
