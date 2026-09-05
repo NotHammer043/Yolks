@@ -17,6 +17,14 @@ RUN apt update \
     ffmpeg iproute2 dnsutils iputils-ping procps \
     sqlite3 libsqlite3-dev \
     libnss3 libdbus-1-3 \
+    tigervnc-standalone-server tigervnc-common \
+    libx11-6 libx11-xcb1 libxcb1 libxcomposite1 \
+    libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 \
+    libxrandr2 libxrender1 libxss1 libxtst6 \
+    libpango-1.0-0 libcairo2 libasound2 libatk1.0-0 \
+    libatk-bridge2.0-0 libcups2 libdrm2 libgbm1 \
+    libatspi2.0-0 libxkbcommon0 \
+    fonts-liberation libappindicator3-1 xdg-utils \
     tini \
  && rm -rf /var/lib/apt/lists/*
 
