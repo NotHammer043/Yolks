@@ -17,7 +17,7 @@ RUN apt update \
     ffmpeg iproute2 dnsutils iputils-ping procps \
     sqlite3 libsqlite3-dev \
     libnss3 libdbus-1-3 \
-    xvfb \
+    xvfb x11-utils x11-xkb-utils \
     tigervnc-standalone-server tigervnc-common netcat-traditional \
     libx11-6 libx11-xcb1 libxcb1 libxcomposite1 \
     libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 \
